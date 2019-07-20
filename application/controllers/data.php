@@ -33,4 +33,52 @@ class Data extends CI_Controller {
 		$this->load->view('f_footer');
 
 	}
+
+	public function services()
+	{
+		$this->load->view('f_sidebar');
+		$this->load->view('content/services');
+		$this->load->view('f_footer');
+
+	}
+
+	public function post()
+	{
+		$this->load->view('f_sidebar');
+		$this->load->view('content/post');
+		$this->load->view('f_footer');
+
+	}
+
+	public function blog()
+	{
+		$this->load->view('f_sidebar');
+		$this->load->view('content/blog');
+		$this->load->view('f_footer');
+
+	}
+
+	public function portfolio()
+	{
+		$this->load->view('f_sidebar');
+		$this->load->view('content/portfolio');
+		$this->load->view('f_footer');
+
+	}
+
+	public function contact()
+	{
+		$this->load->view('f_sidebar');
+		$this->load->view('content/portfolio');
+		$this->load->view('f_footer');
+
+	}
+
+	public function projects_single()
+	{
+		$this->load->view('f_sidebar');
+		$this->load->view('content/projects_single');
+		$this->load->view('f_footer');
+
+	}
 }
