@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class template extends CI_Controller {
+class Home extends CI_Controller {
 
 	function __construct()
 	{
@@ -17,5 +17,6 @@ class template extends CI_Controller {
 		$this->load->view('backend/home');
 		$this->load->view('backend/template/footer');
 	}
+	
 
 }
