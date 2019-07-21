@@ -3,20 +3,20 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>
-            Experience
+       <h1>
+            Skill
             <!-- <small>Preview</small> -->
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url("backend/home/index");?>"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo base_url("backend/experience/index");?>">All Experience</a></li>
-            <li class="active">Create New Skill</li>
+            <li><a href="<?php echo base_url("backend/skill/index");?>">All Skill</a></li>
+            <li class="active">Edit New Skill</li>
         </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
-        <form role="form" method="POST" action="<?php echo base_url("backend/experience/store");?>">
+        <form role="form" method="POST" action="<?php echo base_url("backend/skill/update");?>">
             
             <div class="row">
                 <!-- left column -->
@@ -28,37 +28,30 @@
             </div> -->
                         <!-- /.box-header -->
                         <!-- form start -->
-
-
+                        <?php foreach ($skill as $row) {
+                                        ?>
+                                        <input id="id" name="id" required="required" type="hidden" value="<?php echo $row->id; ?>"> 
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Date</label>
-                                <input type="text" class="form-control" id="date" name="date" placeholder="Enter date range ">
+                                <input type="text" class="form-control" id="skill" name="skill" placeholder="ex:php,javascript,ms word " value="<?php echo $row->skill; ?>">
                             </div>
                             <div class="form-group">
                                 <label class="exampleInputFile">Company</label>
-                                <input type="text" class="form-control" id="company" name="company" placeholder="Enter company name">
+                                <input type="number" class="form-control" id="experience" name="experience" placeholder="max:100" min="1" max="100" value="<?php echo $row->experience; ?>">
                             </div>
 
-                            <div class="form-group">
-                                <label class="exampleInputFile">Position</label>
-                                <input type="text" class="form-control" id="position" name="position" placeholder="Enter role name">
-                            </div>
-
-                            <label for="exampleInputEmail1">Description</label>
-                            <div class="box-body pad">
-                                <textarea class="form-control" rows="3" name="description" id="description"></textarea>
-                            </div>
+                            
 
                         </div>
 
                         <div class="box-footer">
-                            <a href="<?php echo base_url("backend/experience/index")?>" type="button" class="btn btn-default ">Back</a>
+                            <a href="<?php echo base_url("backend/skill/index")?>" type="button" class="btn btn-default ">Back</a>
                             <button type="submit" class="btn btn-info pull-right">Submit</button>
                         </div>
                         <!-- /.box-body -->
 
-
+ <?php } ?>
 
                     </div>
                     <!-- /.box -->

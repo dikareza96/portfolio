@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Experience extends CI_Controller {
+class Skill extends CI_Controller {
 
 	
 	
@@ -13,58 +13,50 @@ class Experience extends CI_Controller {
 
 	}
 
-	protected $table = 'experience'; 
+	protected $table = 'skill'; 
 
 	function index()
 	{
-		$data['experience'] = $this->Resource->show($this->table)->result();
+		$data['skill'] = $this->Resource->show($this->table)->result();
 		$this->load->view('backend/template/header');
 		$this->load->view('backend/template/sidebar');
-		$this->load->view('backend/modules/experience/index',$data);
+		$this->load->view('backend/modules/skill/index',$data);
 		$this->load->view('backend/template/footer');
 	}
 	function create()
 	{
 		$this->load->view('backend/template/header');
 		$this->load->view('backend/template/sidebar');
-		$this->load->view('backend/modules/experience/create');
+		$this->load->view('backend/modules/skill/create');
 		$this->load->view('backend/template/footer');
 	}
 	function store()
 	{
-		$date = $this->input->post('date');
-		$company = $this->input->post('company');
-		$position = $this->input->post('position');
-		$description = $this->input->post('description');
+		$skill = $this->input->post('skill');
+		$experience = $this->input->post('experience');
 		$data= array(
-			'date' =>$date,
-			'company' =>$company,
-			'position' =>$position,
-			'description' =>$description
+			'skill' =>$skill,
+			'experience' =>$experience
 
 		);
 		$this->Resource->store($data,$this->table);
-		redirect('backend/experience/index');
+		redirect('backend/skill/index');
 	}
 	function edit($id){ 
 		$where = array('id' => $id);
-	    $data['experience'] = $this->Resource->edit($where,$this->table)->result();
+	    $data['skill'] = $this->Resource->edit($where,$this->table)->result();
 	    $this->load->view('backend/template/header');
 		$this->load->view('backend/template/sidebar');
-		$this->load->view('backend/modules/experience/edit',$data);
+		$this->load->view('backend/modules/skill/edit',$data);
 		$this->load->view('backend/template/footer');
 	}
 	function update(){
 		$id = $this->input->post('id');
-		$date = $this->input->post('date');
-		$company = $this->input->post('company');
-		$position = $this->input->post('position');
-		$description = $this->input->post('description');
+		$skill = $this->input->post('skill');
+		$experience = $this->input->post('experience');
 		$data= array(
-			'date' =>$date,
-			'company' =>$company,
-			'position' =>$position,
-			'description' =>$description
+			'skill' =>$skill,
+			'experience' =>$experience
 
 		);
 		$where = array(
@@ -72,7 +64,7 @@ class Experience extends CI_Controller {
 			);
 
 		$this->Resource->update($where,$data,$this->table);
-		redirect('backend/experience/index');
+		redirect('backend/skill/index');
 
 	}
 
@@ -80,7 +72,7 @@ class Experience extends CI_Controller {
         $where = array('id' => $id); 
         $this->Resource->destroy($where,$this->table);
 
-        redirect('backend/experience/index'); 
+        redirect('backend/skill/index'); 
     }
 	
 	
