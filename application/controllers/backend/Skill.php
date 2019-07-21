@@ -17,21 +17,26 @@ class Skill extends CI_Controller {
 
 	function index()
 	{
-		$data['skill'] = $this->Resource->show($this->table)->result();
+		$module = $this->table;
+		$data['route'] = $this->table;
+		$data[$module] = $this->Resource->show($this->table)->result();
 		$this->load->view('backend/template/header');
 		$this->load->view('backend/template/sidebar');
-		$this->load->view('backend/modules/skill/index',$data);
+		$this->load->view('backend/modules/'.$module.'/index',$data);
 		$this->load->view('backend/template/footer');
 	}
 	function create()
 	{
+		$module = $this->table;
+		$data['route'] = $this->table;
 		$this->load->view('backend/template/header');
 		$this->load->view('backend/template/sidebar');
-		$this->load->view('backend/modules/skill/create');
+		$this->load->view('backend/modules/'.$module.'/create', $data);
 		$this->load->view('backend/template/footer');
 	}
 	function store()
 	{
+		$module = $this->table;
 		$skill = $this->input->post('skill');
 		$experience = $this->input->post('experience');
 		$data= array(
@@ -40,17 +45,20 @@ class Skill extends CI_Controller {
 
 		);
 		$this->Resource->store($data,$this->table);
-		redirect('backend/skill/index');
+		redirect('backend/'.$module.'/index');
 	}
-	function edit($id){ 
+	function edit($id){
+	    $module = $this->table;
+		$data['route'] = $this->table; 
 		$where = array('id' => $id);
-	    $data['skill'] = $this->Resource->edit($where,$this->table)->result();
+	    $data[$module] = $this->Resource->edit($where,$this->table)->result();
 	    $this->load->view('backend/template/header');
 		$this->load->view('backend/template/sidebar');
-		$this->load->view('backend/modules/skill/edit',$data);
+		$this->load->view('backend/modules/'.$module.'/edit',$data);
 		$this->load->view('backend/template/footer');
 	}
 	function update(){
+		$module = $this->table;
 		$id = $this->input->post('id');
 		$skill = $this->input->post('skill');
 		$experience = $this->input->post('experience');
@@ -64,15 +72,16 @@ class Skill extends CI_Controller {
 			);
 
 		$this->Resource->update($where,$data,$this->table);
-		redirect('backend/skill/index');
+		redirect('backend/'.$module.'/index');
 
 	}
 
 	function destroy ($id){ 
+		$module = $this->table;
         $where = array('id' => $id); 
         $this->Resource->destroy($where,$this->table);
 
-        redirect('backend/skill/index'); 
+        redirect('backend/'.$module.'/index'); 
     }
 	
 	

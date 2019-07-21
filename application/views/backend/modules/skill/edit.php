@@ -9,14 +9,14 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url("backend/home/index");?>"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo base_url("backend/skill/index");?>">All Skill</a></li>
+            <li><a href="<?php echo base_url("backend/".$route."/index");?>">All Skill</a></li>
             <li class="active">Edit New Skill</li>
         </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
-        <form role="form" method="POST" action="<?php echo base_url("backend/skill/update");?>">
+        <form role="form" method="POST" action="<?php echo base_url("backend/".$route."/update");?>">
             
             <div class="row">
                 <!-- left column -->
@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="box-footer">
-                            <a href="<?php echo base_url("backend/skill/index")?>" type="button" class="btn btn-default ">Back</a>
+                            <a href="<?php echo base_url("backend/".$route."/index")?>" type="button" class="btn btn-default ">Back</a>
                             <button type="submit" class="btn btn-info pull-right">Submit</button>
                         </div>
                         <!-- /.box-body -->

@@ -17,7 +17,7 @@
             <div class="box-header">
               <h3 class="box-title">Daftar Experience</h3>
                <div class="box-tools pull-right">
-                    <a href="<?php echo base_url("backend/experience/create");?>" class="btn btn-primary btn-sm btn-flat" >
+                    <a href="<?php echo base_url("backend/".$route."/create");?>" class="btn btn-primary btn-sm btn-flat" >
                           
                           Tambah Data
                     </a>
@@ -49,8 +49,8 @@
 
                   <td class="text-center"><?php echo $row->position; ?></td>
                   <td class="text-center" style="width:150px;">
-                      <form method="POST" action="<?php echo base_url("backend/experience/destroy/$row->id") ?>" accept-charset="UTF-8">
-                      <a href="<?php echo base_url("backend/experience/edit/$row->id") ?>" class="btn btn-primary btn-sm btn-flat" >
+                      <form method="POST" action="<?php echo base_url("backend/".$route."/destroy/$row->id") ?>" accept-charset="UTF-8">
+                      <a href="<?php echo base_url("backend/".$route."/edit/$row->id") ?>" class="btn btn-primary btn-sm btn-flat" >
                           Edit
                          </a>
                       <input name="_method" type="hidden" value="DELETE">
