@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <aside id="lonon-aside">
             <!-- Logo -->
             <h1 id="lonon-logo">
-                <img src="images/profile.jpg" alt=""><br />
+                <img src="<?php echo base_url('assets/frontend/images/profile.jpg') ?>" alt=""><br />
                 <a href="index.html">Lonon F. Smith<span>Web Designer</span></a>
             </h1>
             <!-- Menu -->
@@ -55,4 +55,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <p><small>&copy; 2019 Lonon. by <a href="#">DuruThemes</a></small></p>
             </div>
         </aside>
-        
+       
+

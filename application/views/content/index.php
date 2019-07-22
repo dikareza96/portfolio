@@ -4,7 +4,7 @@
             <div class="lonon-about">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-5"> <img src="images/resume.jpg" class="img-fluid mb-15 animate-box fadeInLeft animated" data-animate-effect="fadeInLeft" alt=""> </div>
+                        <div class="col-md-5"> <img src="<?php echo base_url('assets/frontend/images/resume.jpg') ?>" class="img-fluid mb-15 animate-box fadeInLeft animated" data-animate-effect="fadeInLeft" alt=""> </div>
                         <div class="col-md-7 animate-box fadeInLeft animated" data-animate-effect="fadeInLeft"> <span class="heading-meta style-1">Informations</span>
                             <h3 class="lonon-about-heading">I'm Lonon F. Smith</h3>
                             <p>Quisque convallis lacinia est et volutpat. Ut interdum lectus velit, ac venenatis odio fringilla ut. Mauris tincidunt diam a nisi mollis rhoncus. Nam non ante consequatir, malesuada dui euismod, pharetra.</p>
@@ -107,3 +107,4 @@
                     </div>
                 </div>
             </div>
+           
