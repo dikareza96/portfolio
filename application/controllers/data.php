@@ -69,7 +69,7 @@ class Data extends CI_Controller {
 	public function contact()
 	{
 		$this->load->view('f_sidebar');
-		$this->load->view('content/portfolio');
+		$this->load->view('content/contact');
 		$this->load->view('f_footer');
 
 	}
