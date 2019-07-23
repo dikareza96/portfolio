@@ -18,28 +18,38 @@
       <ul class="sidebar-menu" data-widget="tree">
        
          <li >
-          <a href="<?php echo base_url("backend/home/index");?>">
-            <i class="fa fa-dashboard"></i> <span>Home</span>
+          <a href="<?php echo base_url("backend/experience/index");?>">
+            <i class="fa fa-table"></i> <span>Experience</span>
 
           </a>
+           <a href="<?php echo base_url("backend/skill/index");?>">
+            <i class="fa fa-table"></i> <span>Skill</span>
+
+          </a>
+           <a href="<?php echo base_url("backend/client/index");?>">
+            <i class="fa fa-table"></i> <span>Client</span>
+
+          </a>
+           <a href="<?php echo base_url("backend/testimonial/index");?>">
+            <i class="fa fa-table"></i> <span>Testimonial</span>
+
+          </a>
+           <a href="<?php echo base_url("backend/project/index");?>">
+            <i class="fa fa-table"></i> <span>Project</span>
+
+          </a>
+           <a href="<?php echo base_url("backend/contact/index");?>">
+            <i class="fa fa-table"></i> <span>Contact</span>
+
+          </a>
+           <a href="<?php echo base_url("backend/education/index");?>">
+            <i class="fa fa-table"></i> <span>Education</span>
+
+          </a>
+           
 
         </li>
-            <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-laptop"></i>
-                                <span>Posts</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="<?php echo base_url("backend/experience/index");?>"><i class="fa fa-angle-double-right"></i>Experience</a></li>
-                                 <li><a href="<?php echo base_url("backend/skill/index");?>"><i class="fa fa-angle-double-right"></i>Skill</a></li>
-                                 <li><a href="<?php echo base_url("backend/testimonial/index");?>"><i class="fa fa-angle-double-right"></i>Testimonial</a></li>
-                                  <li><a href="<?php echo base_url("backend/client/index");?>"><i class="fa fa-angle-double-right"></i>Client</a></li>
-                                   <li><a href="<?php echo base_url("backend/project/index");?>"><i class="fa fa-angle-double-right"></i>Project</a></li>
-                                
-
-                            </ul>
-            </li>
+          
             
             
 
