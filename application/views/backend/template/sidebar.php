@@ -37,7 +37,12 @@
                                  <li><a href="<?php echo base_url("backend/profile/index");?>"><i class="fa fa-angle-double-right"></i>Profil</a></li>
 =======
                                  <li><a href="<?php echo base_url("backend/testimonial/index");?>"><i class="fa fa-angle-double-right"></i>Testimonial</a></li>
+<<<<<<< HEAD
 >>>>>>> 82deb9f45f23548bdf96e271ea9cc9440bcac873
+=======
+                                  <li><a href="<?php echo base_url("backend/client/index");?>"><i class="fa fa-angle-double-right"></i>Client</a></li>
+                                   <li><a href="<?php echo base_url("backend/project/index");?>"><i class="fa fa-angle-double-right"></i>Project</a></li>
+>>>>>>> a0b29f94138bcebe90290784720fcb2ede58e822
                                 
 
                             </ul>

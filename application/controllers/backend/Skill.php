@@ -79,6 +79,7 @@ class Skill extends CI_Controller {
 	function destroy ($id){ 
 		$module = $this->table;
         $where = array('id' => $id); 
+        
         $this->Resource->destroy($where,$this->table);
 
         redirect('backend/'.$module.'/index'); 
