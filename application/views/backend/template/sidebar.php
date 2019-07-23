@@ -34,6 +34,7 @@
                                 <li><a href="<?php echo base_url("backend/experience/index");?>"><i class="fa fa-angle-double-right"></i>Experience</a></li>
                                  <li><a href="<?php echo base_url("backend/skill/index");?>"><i class="fa fa-angle-double-right"></i>Skill</a></li>
                                  <li><a href="<?php echo base_url("backend/testimonial/index");?>"><i class="fa fa-angle-double-right"></i>Testimonial</a></li>
+                                  <li><a href="<?php echo base_url("backend/client/index");?>"><i class="fa fa-angle-double-right"></i>Client</a></li>
                                 
 
                             </ul>

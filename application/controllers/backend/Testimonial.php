@@ -9,8 +9,6 @@ class Testimonial extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Resource');
-		
-
 	}
 
 	protected $table = 'testimonial';
@@ -76,14 +74,11 @@ class Testimonial extends CI_Controller {
 
 		$this->Resource->update($where,$data,$module);
 		redirect('backend/'.$module.'/index');
-
 	}
-
 	function destroy ($id){ 
 		$module = $this->table;
         $where = array('id' => $id); 
         $this->Resource->destroy($where,$module);
-
         redirect('backend/'.$module.'/index'); 
     }
 	
