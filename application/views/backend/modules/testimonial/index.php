@@ -4,7 +4,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Experience
+        Testimonial
         
       </h1> 
     
@@ -15,11 +15,11 @@
         <div class="col-xs-12">
           <div class="box box-success">
             <div class="box-header">
-              <h3 class="box-title">Daftar Experience</h3>
+              <h3 class="box-title">Daftar Testimonial</h3>
                <div class="box-tools pull-right">
                     <a href="<?php echo base_url("backend/".$route."/create");?>" class="btn btn-primary btn-sm btn-flat" >
                           
-                          Tambah Data
+                          Tambah Testimonial
                     </a>
                  </div>
                
@@ -31,23 +31,22 @@
                 <thead>
                   <tr>
                       <th class="text-center">NO.</th>
-                      <th class="text-center">Date</th>
-                      <th class="text-center">Company</th>
-                      <th class="text-center">Positon</th>
+                      <th class="text-center">Name</th>
+                      <th class="text-center">Position</th>
+                      <th class="text-center">Comment</th>
                       <th class="text-center">Action</th>
                   </tr>
                 </thead>
 
                 <tbody>
                   <?php $no=1; 
-                foreach ($experience as $row) {
+                foreach ($testimonial as $row) {
                 ?> 
                 <tr>
                   <td class="text-center"><?php echo $no++ ?></td>
-                  <td class="text-center"><?php echo $row->date ;?></td>
-                  <td class="text-center"><?php echo $row->company; ?></td>
-
+                  <td class="text-center"><?php echo $row->name ;?></td>
                   <td class="text-center"><?php echo $row->position; ?></td>
+                  <td class="text-center"><?php echo $row->comment; ?></td>
                   <td class="text-center" style="width:150px;">
                       <form method="POST" action="<?php echo base_url("backend/".$route."/destroy/$row->id") ?>" accept-charset="UTF-8">
                       <a href="<?php echo base_url("backend/".$route."/edit/$row->id") ?>" class="btn btn-primary btn-sm btn-flat" >

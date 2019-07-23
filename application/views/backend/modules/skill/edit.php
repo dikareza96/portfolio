@@ -9,14 +9,14 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url("backend/home/index");?>"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo base_url("backend/skill/index");?>">All Skill</a></li>
+            <li><a href="<?php echo base_url("backend/".$route."/index");?>">All Skill</a></li>
             <li class="active">Edit New Skill</li>
         </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
-        <form role="form" method="POST" action="<?php echo base_url("backend/skill/update");?>">
+        <form role="form" method="POST" action="<?php echo base_url("backend/".$route."/update");?>">
             
             <div class="row">
                 <!-- left column -->
@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="box-footer">
-                            <a href="<?php echo base_url("backend/skill/index")?>" type="button" class="btn btn-default ">Back</a>
+                            <a href="<?php echo base_url("backend/".$route."/index")?>" type="button" class="btn btn-default ">Back</a>
                             <button type="submit" class="btn btn-info pull-right">Submit</button>
                         </div>
                         <!-- /.box-body -->
@@ -70,30 +70,18 @@
 </div>
 
 <!-- jQuery 3 -->
-<script src="<?php echo base_url(); ?>assets/backend/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script src="<?php echo base_url(); ?>assets/backend/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Select2 -->
-<script src="<?php echo base_url(); ?>assets/backend/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+<script src="<?php echo base_url(); ?>assets/backend/bower_components/select2/dist/js/select2.full.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="<?php echo base_url(); ?>assets/backend/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="<?php echo base_url(); ?>assets/backend/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="<?php echo base_url(); ?>assets/backend/bower_components/fastclick/lib/fastclick.js')}}"></script>
+<script src="<?php echo base_url(); ?>assets/backend/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="<?php echo base_url(); ?>assets/backend/dist/js/adminlte.min.js')}}"></script>
+<script src="<?php echo base_url(); ?>assets/backend/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<?php echo base_url(); ?>assets/backend/dist/js/demo.js')}}"></script>
-<script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-
-        CKEDITOR.replace('editor1')
-    //bootstrap WYSIHTML5 - text editor
-        $('.textarea').wysihtml5()
-
-       
-        
-    //Initialize Select2 Elements
-    $('.select2').select2()
-
-    });
-</script>
-
+<script src="<?php echo base_url(); ?>assets/backend/dist/js/demo.js"></script>
+<!-- CK Editor -->
+<script src="<?php echo base_url(); ?>assets/backend/bower_components/ckeditor/ckeditor.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="<?php echo base_url(); ?>assets/backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>

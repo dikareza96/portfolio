@@ -17,7 +17,7 @@
             <div class="box-header">
               <h3 class="box-title">Daftar Profile</h3>
                <div class="box-tools pull-right">
-                    <a href="<?php echo base_url("backend/experience/create");?>" class="btn btn-primary btn-sm btn-flat" >
+                    <a href="<?php echo base_url("backend/profile/create");?>" class="btn btn-primary btn-sm btn-flat" >
                           
                           Tambah Data
                     </a>
@@ -31,8 +31,8 @@
                 <thead>
                   <tr>
                       <th class="text-center">NO.</th>
-                      <th class="text-center">Summary</th>
                       <th class="text-center">Content</th>
+                      <th class="text-center">Position</th>
                       <th class="text-center">Name</th>
                       <th class="text-center">Profesi</th>
                       <th class="text-center">Action</th>
@@ -41,15 +41,16 @@
 
                 <tbody>
                   <?php $no=1; 
-                foreach ($experience as $row) {
+                foreach ($profile as $row) {
                 ?> 
                 <tr>
                   <td class="text-center"><?php echo $no++ ?></td>
-                  <td class="text-center"><?php echo $row->summary ;?></td>
+                  
                   <td class="text-center"><?php echo $row->content; ?></td>
+                  <td class="text-center"><?php echo $row->position ;?></td>
 
                   <td class="text-center"><?php echo $row->name; ?></td>
-                  td class="text-center"><?php echo $row->profesi; ?></td>
+                  <td class="text-center"><?php echo $row->profesi; ?></td>
                   <td class="text-center" style="width:150px;">
                       <form method="POST" action="<?php echo base_url("backend/experience/destroy/$row->id") ?>" accept-charset="UTF-8">
                       <a href="<?php echo base_url("backend/experience/edit/$row->id") ?>" class="btn btn-primary btn-sm btn-flat" >
@@ -60,9 +61,7 @@
                       <input type="submit" class="btn btn-danger btn-sm btn-flat" onclick="return confirm('Anda yakin akan menghapus data ini?');" value="Hapus">
 
                       </form>
-                  </td>
-                                       
-               
+                  </td>     
                 </tr> 
               <?php } ?>
               

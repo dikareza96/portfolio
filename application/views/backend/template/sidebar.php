@@ -33,7 +33,11 @@
                             <ul class="treeview-menu">
                                 <li><a href="<?php echo base_url("backend/experience/index");?>"><i class="fa fa-angle-double-right"></i>Experience</a></li>
                                  <li><a href="<?php echo base_url("backend/skill/index");?>"><i class="fa fa-angle-double-right"></i>Skill</a></li>
+
                                  <li><a href="<?php echo base_url("backend/profile/index");?>"><i class="fa fa-angle-double-right"></i>Profil</a></li>
+=======
+                                 <li><a href="<?php echo base_url("backend/testimonial/index");?>"><i class="fa fa-angle-double-right"></i>Testimonial</a></li>
+>>>>>>> 82deb9f45f23548bdf96e271ea9cc9440bcac873
                                 
 
                             </ul>

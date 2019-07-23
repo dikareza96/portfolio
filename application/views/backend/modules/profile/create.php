@@ -4,19 +4,19 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Experience
+            Profile
             <!-- <small>Preview</small> -->
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url("backend/home/index");?>"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo base_url("backend/experience/index");?>">All Experience</a></li>
-            <li class="active">Create New Skill</li>
+            <li><a href="<?php echo base_url("backend/profile/index");?>">All Profile</a></li>
+            <li class="active">Create New Profile</li>
         </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
-        <form role="form" method="POST" action="<?php echo base_url("backend/experience/store");?>">
+        <form role="form" method="POST" action="<?php echo base_url("backend/profile/store");?>">
             
             <div class="row">
                 <!-- left column -->
@@ -31,32 +31,66 @@
 
 
                         <div class="box-body">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Date</label>
-                                <input type="text" class="form-control" id="date" name="date" placeholder="Enter date range ">
+                           
+                                           
+
+                            
+
+                             <div class="box box-info">
+                                <div class="box-header">
+                                  <h3 class="box-title">Content
+                                    <!-- <small>Advanced and full of features</small> -->
+                                </h3>
+                                <!-- tools box -->
+                                <div class="pull-right box-tools">
+                                    <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip"
+                                    title="Collapse">
+                                    <i class="fa fa-minus"></i></button>
+                                    <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip"
+                                    title="Remove">
+                                    <i class="fa fa-times"></i></button>
+                                </div>
+                                <!-- /. tools -->
                             </div>
-                            <div class="form-group">
-                                <label class="exampleInputFile">Company</label>
-                                <input type="text" class="form-control" id="company" name="company" placeholder="Enter company name">
-                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body pad">
+                              <form>
+                                <textarea id="editor2" name="content" rows="10" cols="80">
+                                    <!-- This is my textarea to be replaced with CKEditor. -->
+                                </textarea>
+                            </form>
+                        </div>
+                    </div>
+
+
+
 
                             <div class="form-group">
                                 <label class="exampleInputFile">Position</label>
                                 <input type="text" class="form-control" id="position" name="position" placeholder="Enter role name">
                             </div>
 
-                            <label for="exampleInputEmail1">Description</label>
+                            <label for="exampleInputEmail1">Name</label>
                             <div class="box-body pad">
-                                <textarea class="form-control" rows="3" name="description" id="description"></textarea>
+                                <textarea class="form-control" rows="3" name="name" id="name"></textarea>
+                            </div>
+
+
+                            <label for="exampleInputEmail1">Profesi</label>
+                            <div class="box-body pad">
+                                <textarea class="form-control" rows="3" name="profesi" id="profesi"></textarea>
                             </div>
 
                         </div>
 
                         <div class="box-footer">
-                            <a href="<?php echo base_url("backend/experience/index")?>" type="button" class="btn btn-default ">Back</a>
+                            <a href="<?php echo base_url("backend/profile/index")?>" type="button" class="btn btn-default ">Back</a>
                             <button type="submit" class="btn btn-info pull-right">Submit</button>
                         </div>
                         <!-- /.box-body -->
+
+
+
 
 
 
@@ -77,30 +111,45 @@
 </div>
 
 <!-- jQuery 3 -->
-<script src="<?php echo base_url(); ?>assets/backend/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<script src="<?php echo base_url(); ?>assets/backend/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Select2 -->
-<script src="<?php echo base_url(); ?>assets/backend/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+<script src="<?php echo base_url(); ?>assets/backend/bower_components/select2/dist/js/select2.full.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="<?php echo base_url(); ?>assets/backend/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="<?php echo base_url(); ?>assets/backend/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="<?php echo base_url(); ?>assets/backend/bower_components/fastclick/lib/fastclick.js')}}"></script>
+<script src="<?php echo base_url(); ?>assets/backend/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="<?php echo base_url(); ?>assets/backend/dist/js/adminlte.min.js')}}"></script>
+<script src="<?php echo base_url(); ?>assets/backend/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<?php echo base_url(); ?>assets/backend/dist/js/demo.js')}}"></script>
-<script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
+<script src="<?php echo base_url(); ?>assets/backend/dist/js/demo.js"></script>
+<!-- CK Editor -->
+<script src="<?php echo base_url(); ?>assets/backend/bower_components/ckeditor/ckeditor.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="<?php echo base_url(); ?>assets/backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
-        CKEDITOR.replace('editor1')
+
+<!-- CK Editor -->
+
+<!-- Bootstrap WYSIHTML5 -->
+
+<script>
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor1')
     //bootstrap WYSIHTML5 - text editor
-        $('.textarea').wysihtml5()
+    $('.textarea').wysihtml5()
+  })
+</script>
 
-       
-        
-    //Initialize Select2 Elements
-    $('.select2').select2()
 
-    });
+<script>
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor2')
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+  })
 </script>
 

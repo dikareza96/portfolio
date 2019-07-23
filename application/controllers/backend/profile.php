@@ -17,7 +17,7 @@ class Profile extends CI_Controller {
 
 	function index()
 	{
-		$data['experience'] = $this->Resource->show($this->table)->result();
+		$data['profile'] = $this->Resource->show($this->table)->result();
 		$this->load->view('backend/template/header');
 		$this->load->view('backend/template/sidebar');
 		$this->load->view('backend/modules/profile/index',$data);
@@ -32,19 +32,25 @@ class Profile extends CI_Controller {
 	}
 	function store()
 	{
-		$date = $this->input->post('date');
-		$company = $this->input->post('company');
+		$profile_id = $this->input->post('id');
+		$content = $this->input->post('content');
 		$position = $this->input->post('position');
-		$description = $this->input->post('description');
+		$name = $this->input->post('name');
+		$profesi = $this->input->post('profesi');
 		$data= array(
-			'date' =>$date,
-			'company' =>$company,
-			'position' =>$position,
-			'description' =>$description
+			'id' =>$profile_id,
+			'content' =>$content,
+			'position'=>$position,
+			'name' =>$name,
+			'profesi' =>$profesi
 
 		);
-		$this->Resource->store($data,$this->table);
-		redirect('backend/experience/index');
+
+		 print_r($data);
+
+
+		// $this->Resource->store($data,$this->table);
+		// redirect('backend/profile/index');
 	}
 	function edit($id){ 
 		$where = array('id' => $id);

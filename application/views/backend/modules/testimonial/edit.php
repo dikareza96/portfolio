@@ -3,14 +3,14 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>
-            Experience
+       <h1>
+            Testimonial
             <!-- <small>Preview</small> -->
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url("backend/home/index");?>"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo base_url("backend/".$route."/index");?>">All Experience</a></li>
-            <li class="active">Edit Experience</li>
+            <li><a href="<?php echo base_url("backend/".$route."/index");?>">All Testimonial</a></li>
+            <li class="active">Edit New Testimonial</li>
         </ol>
     </section>
 
@@ -28,28 +28,23 @@
             </div> -->
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <?php foreach ($experience as $row) {
+                        <?php foreach ($testimonial as $row) {
                                         ?>
                                         <input id="id" name="id" required="required" type="hidden" value="<?php echo $row->id; ?>"> 
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Date</label>
-                                <input type="text" class="form-control" id="date" name="date" placeholder="Enter date range " value="<?php echo $row->date; ?>">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="" value="<?php echo $row->name; ?>">
                             </div>
-                            <div class="form-group">
-                                <label class="exampleInputFile">Company</label>
-                                <input type="text" class="form-control" id="company" name="company" placeholder="Enter company name" value="<?php echo $row->company; ?>">
-                            </div>
-
                             <div class="form-group">
                                 <label class="exampleInputFile">Position</label>
-                                <input type="text" class="form-control" id="position" name="position" placeholder="Enter role name" value="<?php echo $row->position; ?>">
+                                <input type="text" class="form-control" id="experience" name="experience" placeholder="ex:Supervisor, Project Manager" value="<?php echo $row->position; ?>">
                             </div>
-
-                            <label for="exampleInputEmail1">Description</label>
-                            <div class="box-body pad">
-                                <textarea class="form-control" rows="3" name="description" id="description"><?php echo $row->description; ?></textarea>
+                             <div class="form-group">
+                                <label class="exampleInputFile">Comment</label>
+                                <textarea class="form-control" rows="3" id="comment" name="comment" placeholder="Enter ..."><?php echo $row->comment; ?></textarea>
                             </div>
+                            
 
                         </div>
 
@@ -93,6 +88,3 @@
 <script src="<?php echo base_url(); ?>assets/backend/bower_components/ckeditor/ckeditor.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="<?php echo base_url(); ?>assets/backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-
-
-
