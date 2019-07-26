@@ -11,7 +11,10 @@ class Profile extends CI_Controller {
 		$this->load->helper(array('form', 'url','file', 'text'));
 		$this->load->model('Resource');
 		
-
+		if($this->session->userdata('level') <> 'admin')
+				{
+					redirect('backend/login');
+				}
 	}
 
 	protected $table = 'profile'; 
