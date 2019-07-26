@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Profile extends CI_Controller {
+class Blog extends CI_Controller {
 
 	
 	
@@ -14,7 +14,7 @@ class Profile extends CI_Controller {
 
 	}
 
-	protected $table = 'profile'; 
+	protected $table = 'blog'; 
 
 	function index()
 	{
@@ -32,7 +32,7 @@ class Profile extends CI_Controller {
 		$data['route'] = $this->table;
 		$this->load->view('backend/template/header');
 		$this->load->view('backend/template/sidebar');
-		$this->load->view('backend/modules/'.$module.'/create',$data);
+		$this->load->view('backend/modules/'.$module.'/create', $data);
 		$this->load->view('backend/template/footer');
 	}
 	function store()
@@ -51,29 +51,24 @@ class Profile extends CI_Controller {
         {
 	        if ($this->upload->do_upload('image'))
 	        {
-		    $content = $this->input->post('content');
-		    $position = $this->input->post('position');
-		    $name = $this->input->post('name');
-		    $profesi = $this->input->post('profesi');
-		  
+		    $title = $this->input->post('title');
+		    $content = $this->input->post('desc');
+	 
 	        $gbr = $this->upload->data();
 	        $data = array(
-	        			'content' => $content,
-	        			'position' => $position,
-	        			'name' => $name,
-	        			'profesi' => $profesi,
+	        			'title' => $title,
+	        			'desc' => $content,
 	        			'img' =>$gbr['file_name']
 
 	        			);
 	        $this->Resource->store($data,$this->table);  
 	        } 
 	    }
-
 		redirect('backend/'.$module.'/index');
 	}
-	function edit($id){ 
-		$module = $this->table;
-        $data['route'] = $this->table;
+	function edit($id){
+	    $module = $this->table;
+		$data['route'] = $this->table; 
 		$where = array('id' => $id);
 	    $data[$module] = $this->Resource->edit($where,$this->table)->result();
 	    $this->load->view('backend/template/header');
@@ -82,8 +77,8 @@ class Profile extends CI_Controller {
 		$this->load->view('backend/template/footer');
 	}
 	function update(){
-		
 		$module = $this->table;
+		
 		$this->load->library('upload');
         $nmfile = "file_".time(); 
         $config['upload_path'] = './assets/uploads/'; 
@@ -93,35 +88,37 @@ class Profile extends CI_Controller {
         $config['max_height']           = 2048;
         $config['file_name'] = $nmfile;
         $this->upload->initialize($config);
+        $content = $this->input->post('content');
          if($_FILES['image']['name'])
         {
 	        if ($this->upload->do_upload('image'))
 	        {
-	        	$id = $this->input->post('id');
+	        $title = $this->input->post('title');
+		    $teaser = $this->input->post('teaser');
+		   // $content = $_POST['content'];
 		    $content = $this->input->post('content');
-		    $position = $this->input->post('position');
-		    $name = $this->input->post('name');
-		    $profesi = $this->input->post('profesi');
-		  
+		    
+
 	        $gbr = $this->upload->data();
 	        $data = array(
+	        			'title' => $title,
+	        			'teaser' => $teaser,
 	        			'content' => $content,
-	        			'position' => $position,
-	        			'name' => $name,
-	        			'profesi' => $profesi,
-	        			'img' =>$gbr['file_name']
+	        			'img' => $gbr['file_name']
 
 	        			);
-	        $where = array(
+	         $where = array(
 			'id' => $id
 			);
-	         $this->Resource->update($where,$data,$this->table);
+		
+		    $this->Resource->update($where,$data,$this->table);
 	        } 
 	    }
-
-		
+	   
 		redirect('backend/'.$module.'/index');
+
 	}
+
 	function destroy ($id){ 
 		$module = $this->table;
         $where = array('id' => $id);
@@ -132,7 +129,5 @@ class Profile extends CI_Controller {
     }
 	
 	
-
-
 
 }

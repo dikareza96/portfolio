@@ -9,14 +9,15 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url("backend/home/index");?>"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo base_url("backend/profile/index");?>">All Profile</a></li>
+            <li><a href="<?php echo base_url("backend/".$route."/index");?>">All Profile</a></li>
             <li class="active">Create New Profile</li>
         </ol>
     </section>
 
+
     <!-- Main content -->
     <section class="content">
-        <form role="form" method="POST" action="<?php echo base_url("backend/profile/store");?>">
+        <form role="form" method="POST" enctype="multipart/form-data" action="<?php echo base_url("backend/".$route."/store");?>">
             
             <div class="row">
                 <!-- left column -->
@@ -36,31 +37,24 @@
 
                             
 
-                             <div class="box box-info">
+                             
                                 <div class="box-header">
                                   <h3 class="box-title">Content
                                     <!-- <small>Advanced and full of features</small> -->
                                 </h3>
                                 <!-- tools box -->
-                                <div class="pull-right box-tools">
-                                    <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip"
-                                    title="Collapse">
-                                    <i class="fa fa-minus"></i></button>
-                                    <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip"
-                                    title="Remove">
-                                    <i class="fa fa-times"></i></button>
-                                </div>
+                                
                                 <!-- /. tools -->
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body pad">
-                              <form>
+                              
                                 <textarea id="editor2" name="content" rows="10" cols="80">
                                     <!-- This is my textarea to be replaced with CKEditor. -->
                                 </textarea>
-                            </form>
+                            
                         </div>
-                    </div>
+                   
 
 
 
@@ -81,10 +75,16 @@
                                 <textarea class="form-control" rows="3" name="profesi" id="profesi"></textarea>
                             </div>
 
+                               <div class="form-group">
+                                <label for="exampleInputEmail1">Image</label>
+                                <input type="file" class="form-control" id="image" name="image" >
+                            </div>
+                          
+
                         </div>
 
                         <div class="box-footer">
-                            <a href="<?php echo base_url("backend/profile/index")?>" type="button" class="btn btn-default ">Back</a>
+                            <a href="<?php echo base_url("backend/".$route."/index")?>" type="button" class="btn btn-default ">Back</a>
                             <button type="submit" class="btn btn-info pull-right">Submit</button>
                         </div>
                         <!-- /.box-body -->

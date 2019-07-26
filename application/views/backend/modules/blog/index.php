@@ -4,7 +4,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Profile
+        Blog
         
       </h1> 
     
@@ -15,11 +15,11 @@
         <div class="col-xs-12">
           <div class="box box-success">
             <div class="box-header">
-              <h3 class="box-title">Daftar Profile</h3>
+              <h3 class="box-title">Daftar Blog</h3>
                <div class="box-tools pull-right">
                     <a href="<?php echo base_url("backend/".$route."/create");?>" class="btn btn-primary btn-sm btn-flat" >
                           
-                          Tambah Data
+                          Tambah Blog
                     </a>
                  </div>
                
@@ -31,9 +31,8 @@
                 <thead>
                   <tr>
                       <th class="text-center">NO.</th>
-                      <th class="text-center">Position</th>
-                      <th class="text-center">Name</th>
-                      <th class="text-center">Profesi</th>
+                      <th class="text-center">Title</th>
+                      <th class="text-center">Deskripsi</th>
                       <th class="text-center">Image</th>
                       <th class="text-center">Action</th>
                   </tr>
@@ -41,19 +40,15 @@
 
                 <tbody>
                   <?php $no=1; 
-                foreach ($profile as $row) {
+                foreach ($blog as $row) {
                 ?> 
                 <tr>
                   <td class="text-center"><?php echo $no++ ?></td>
-                  
-                  <td class="text-center"><?php echo $row->position ;?></td>
-
-                  <td class="text-center"><?php echo $row->name; ?></td>
-                  <td class="text-center"><?php echo $row->profesi; ?></td>
+                  <td class="text-center"><?php echo $row->title ?></td>
+                  <td class="text-center"><?php echo $row->desc ?></td>
                   <td class="text-center"><img style="width: 100px;height: 100px;" src="<?=base_url()?>assets/uploads/<?=$row->img;?>"></td>
-                  
                   <td class="text-center" style="width:150px;">
-                   <form method="POST" action="<?php echo base_url("backend/".$route."/destroy/$row->id") ?>" accept-charset="UTF-8">
+                      <form method="POST" action="<?php echo base_url("backend/".$route."/destroy/$row->id") ?>" accept-charset="UTF-8">
                       <a href="<?php echo base_url("backend/".$route."/edit/$row->id") ?>" class="btn btn-primary btn-sm btn-flat" >
                           Edit
                          </a>
@@ -62,7 +57,9 @@
                       <input type="submit" class="btn btn-danger btn-sm btn-flat" onclick="return confirm('Anda yakin akan menghapus data ini?');" value="Hapus">
 
                       </form>
-                  </td>     
+                  </td>
+                                       
+               
                 </tr> 
               <?php } ?>
               

@@ -18,12 +18,19 @@
       <ul class="sidebar-menu" data-widget="tree">
        
          <li >
+
+          <a href="<?php echo base_url("backend/profile/index");?>"><i class="fa fa-angle-double-right"></i>Profil</a>
           <a href="<?php echo base_url("backend/experience/index");?>">
             <i class="fa fa-table"></i> <span>Experience</span>
 
           </a>
            <a href="<?php echo base_url("backend/skill/index");?>">
             <i class="fa fa-table"></i> <span>Skill</span>
+
+          </a>
+
+           <a href="<?php echo base_url("backend/blog/index");?>">
+            <i class="fa fa-table"></i> <span>blog</span>
 
           </a>
            <a href="<?php echo base_url("backend/client/index");?>">
@@ -50,34 +57,7 @@
 
         </li>
 
-            <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-laptop"></i>
-                                <span>Posts</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="<?php echo base_url("backend/experience/index");?>"><i class="fa fa-angle-double-right"></i>Experience</a></li>
-                                 <li><a href="<?php echo base_url("backend/skill/index");?>"><i class="fa fa-angle-double-right"></i>Skill</a></li>
-
-                                 <li><a href="<?php echo base_url("backend/profile/index");?>"><i class="fa fa-angle-double-right"></i>Profil</a></li>
-=======
-                                 <li><a href="<?php echo base_url("backend/testimonial/index");?>"><i class="fa fa-angle-double-right"></i>Testimonial</a></li>
-<<<<<<< HEAD
->>>>>>> 82deb9f45f23548bdf96e271ea9cc9440bcac873
-=======
-                                  <li><a href="<?php echo base_url("backend/client/index");?>"><i class="fa fa-angle-double-right"></i>Client</a></li>
-                                   <li><a href="<?php echo base_url("backend/project/index");?>"><i class="fa fa-angle-double-right"></i>Project</a></li>
->>>>>>> a0b29f94138bcebe90290784720fcb2ede58e822
-                                
-
-                            </ul>
-            </li>
-=======
-          
->>>>>>> fc38b93e6e03f11d206ea1f41a226b1bed1026c6
-            
-            
+         
 
 
 

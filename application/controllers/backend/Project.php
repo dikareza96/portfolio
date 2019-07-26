@@ -95,6 +95,7 @@ class Project extends CI_Controller {
         {
 	        if ($this->upload->do_upload('image'))
 	        {
+	        	$id = $this->input->post('id');
 	        $title = $this->input->post('title');
 		    $teaser = $this->input->post('teaser');
 		   // $content = $_POST['content'];

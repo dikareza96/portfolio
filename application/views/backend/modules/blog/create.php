@@ -4,19 +4,19 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Profile
+            Project
             <!-- <small>Preview</small> -->
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url("backend/home/index");?>"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo base_url("backend/".$route."/index");?>">All Profile</a></li>
-            <li class="active">Edit Profile</li>
+            <li><a href="<?php echo base_url("backend/".$route."/index");?>">All Project</a></li>
+            <li class="active">Create New Project</li>
         </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
-        <form role="form" method="POST" enctype="multipart/form-data" action="<?php echo base_url("backend/".$route."/update");?>">
+        <form role="form" method="POST" enctype="multipart/form-data" action="<?php echo base_url("backend/".$route."/store");?>">
             
             <div class="row">
                 <!-- left column -->
@@ -28,38 +28,25 @@
             </div> -->
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <?php foreach ($profile as $row) {
-                                        ?>
-                                        <input id="id" name="id" required="required" type="hidden" value="<?php echo $row->id; ?>"> 
+
+
                         <div class="box-body">
                             <div class="form-group">
+                                <label for="exampleInputEmail1">Title</label>
+                                <input type="text" class="form-control" id="title" name="title" placeholder="">
+                            </div>
+                           
+                            <div class="form-group">
                                 <label for="exampleInputEmail1">Content</label>
-                               
-                                 <textarea id="editor2" name="content" rows="10" cols="80">
-                                    <?php echo $row->content; ?>
-                                </textarea>
+                                <textarea id="content" name="desc" rows="10" cols="80"></textarea>
                             </div>
                             <div class="form-group">
-                                <label class="exampleInputFile">Position</label>
-                                <input type="text" class="form-control" id="company" name="position" placeholder="Enter company name" value="<?php echo $row->position; ?>">
-                            </div>
-
-                            <div class="form-group">
-                                <label class="exampleInputFile">Name</label>
-                                <input type="text" class="form-control" id="position" name="name" placeholder="Enter role name" value="<?php echo $row->position; ?>">
-                            </div>
-
-                            <label for="exampleInputEmail1">Profesi</label>
-                            <div class="box-body pad">
-                                <textarea class="form-control" rows="3" name="description" id="description"><?php echo $row->profesi; ?></textarea>
-                            </div>
-
-                             <div class="form-group">
                                 <label for="exampleInputEmail1">Image</label>
                                 <input type="file" class="form-control" id="image" name="image" >
-                                <img class="form-control" style="width: 200px;height: 200px;" src="<?=base_url()?>assets/uploads/<?=$row->img;?>">
                             </div>
+                          
 
+                            
                         </div>
 
                         <div class="box-footer">
@@ -68,7 +55,7 @@
                         </div>
                         <!-- /.box-body -->
 
- <?php } ?>
+
 
                     </div>
                     <!-- /.box -->
@@ -98,19 +85,17 @@
 <script src="<?php echo base_url(); ?>assets/backend/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url(); ?>assets/backend/dist/js/demo.js"></script>
-<script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
+<!-- CK Editor -->
+<script src="<?php echo base_url(); ?>assets/backend/bower_components/ckeditor/ckeditor.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="<?php echo base_url(); ?>assets/backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
-        CKEDITOR.replace('editor2')
+<script>
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('content')
     //bootstrap WYSIHTML5 - text editor
-        $('.textarea').wysihtml5()
-
-       
-        
-    //Initialize Select2 Elements
-    $('.select2').select2()
-
-    });
+    $('.textarea').wysihtml5()
+  })
 </script>
-

@@ -3,30 +3,30 @@
             <!-- Contact -->
             <div class="lonon-contact">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12"> <span class="heading-meta style-1">Location</span>
-                            <h2 class="lonon-heading animate-box" data-animate-effect="fadeInLeft">Contact Us</h2> </div>
-                    </div>
+                  
                     <!-- Map Section-->
-                    <div class="map-section">
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 animate-box" data-animate-effect="fadeInLeft">
-                                <div id="contactMap"></div>
-                            </div>
-                        </div>
-                    </div>
+                    
+            <?php $no=1; 
+                foreach ($contact as $row) {
+                ?> 
+
                     <div class="row">
+                  
+
                         <!-- Contact Info -->
                         <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInLeft">
                             <h3 class="lonon-about-heading">Contact Info</h3>
                             <p>Qualamy nisl sodales sit amet sapien id, placerat sodales orciter.
                                 <br />Vivamus nec magna rhoncus felis, faucibus printy.</p>
-                            <p><b>Phone:</b> +1 650-123-0000</p>
-                            <p><b>Email:</b> dev@lonon.com</p>
-                            <p><b>Address:</b> Camino Real, Palo Alto, CA 94306 US.</p>
+                            <p><b>Phone:</b>&nbsp<?php echo $row->phone; ?></p>
+                            <p><b>Email:</b> &nbsp<?php echo $row->email; ?></p>
+                            <p><b>Address:</b>&nbsp<?php echo $row->address; ?></p>
                         </div>
+
+
+                       
                         <!-- Contact Form -->
-                        <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                       <!--  <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
                             <h3 class="lonon-about-heading">How Can I Help You?</h3>
                             <p>We would like to hear from you</p>
                             <form method="post" class="row">
@@ -48,8 +48,11 @@
                                         <input type="submit" class="btn btn-contact" value="Say Hello!"> </div>
                                 </div>
                             </form>
-                        </div>
+                        </div> -->
                     </div>
+
+ <?php } ?>
+
                 </div>
             </div>
            
