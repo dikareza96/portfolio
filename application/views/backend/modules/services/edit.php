@@ -4,19 +4,19 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Skill
+            Services
             <!-- <small>Preview</small> -->
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url("backend/home/index");?>"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo base_url("backend/".$route."/index");?>">All Skill</a></li>
-            <li class="active">Create New Skill</li>
+            <li><a href="<?php echo base_url("backend/".$route."/index");?>">All Profile</a></li>
+            <li class="active">Edit Profile</li>
         </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
-        <form role="form" method="POST" action="<?php echo base_url("backend/".$route."/store");?>">
+        <form role="form" method="POST" enctype="multipart/form-data" action="<?php echo base_url("backend/".$route."/update");?>">
             
             <div class="row">
                 <!-- left column -->
@@ -28,19 +28,28 @@
             </div> -->
                         <!-- /.box-header -->
                         <!-- form start -->
-
-
+                        <?php foreach ($services as $row) {
+                                        ?>
+                                        <input id="id" name="id" required="required" type="hidden" value="<?php echo $row->id; ?>"> 
                         <div class="box-body">
+                          
+
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Skill</label>
-                                <input type="text" class="form-control" id="skill" name="skill" placeholder="ex: php,ms word,coreldraw ">
-                            </div>
-                            <div class="form-group">
-                                <label class="exampleInputFile">Experience</label>
-                                <input type="number" min="1" max="100" class="form-control" id="experience" name="experience" placeholder="ex:50">
+                                <label class="exampleInputFile">Title</label>
+                                <input type="text" class="form-control" id="name" name="title" placeholder="Enter role name" value="<?php echo $row->title; ?>">
                             </div>
 
-                            
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Deskripsi</label>
+                               
+                                 <textarea id="editor2" name="desc" rows="10" cols="80">
+                                    <?php echo $row->desc; ?>
+                                </textarea>
+                            </div>
+                           
+
+                             
+
                         </div>
 
                         <div class="box-footer">
@@ -49,7 +58,7 @@
                         </div>
                         <!-- /.box-body -->
 
-
+ <?php } ?>
 
                     </div>
                     <!-- /.box -->
@@ -79,8 +88,19 @@
 <script src="<?php echo base_url(); ?>assets/backend/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url(); ?>assets/backend/dist/js/demo.js"></script>
-<!-- CK Editor -->
-<script src="<?php echo base_url(); ?>assets/backend/bower_components/ckeditor/ckeditor.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="<?php echo base_url(); ?>assets/backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        CKEDITOR.replace('editor2')
+    //bootstrap WYSIHTML5 - text editor
+        $('.textarea').wysihtml5()
+
+       
+        
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+    });
+</script>
 

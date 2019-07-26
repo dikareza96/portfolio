@@ -4,19 +4,20 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Skill
+            Services
             <!-- <small>Preview</small> -->
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url("backend/home/index");?>"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo base_url("backend/".$route."/index");?>">All Skill</a></li>
-            <li class="active">Create New Skill</li>
+            <li><a href="<?php echo base_url("backend/".$route."/index");?>">All Profile</a></li>
+            <li class="active">Create New Services</li>
         </ol>
     </section>
 
+
     <!-- Main content -->
     <section class="content">
-        <form role="form" method="POST" action="<?php echo base_url("backend/".$route."/store");?>">
+        <form role="form" method="POST" enctype="multipart/form-data" action="<?php echo base_url("backend/".$route."/store");?>">
             
             <div class="row">
                 <!-- left column -->
@@ -31,16 +32,22 @@
 
 
                         <div class="box-body">
+                            
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Skill</label>
-                                <input type="text" class="form-control" id="skill" name="skill" placeholder="ex: php,ms word,coreldraw ">
+                                <label for="exampleInputEmail1">Title</label>
+                                <input type="text" class="form-control" id="name" name="title" placeholder="">
                             </div>
                             <div class="form-group">
-                                <label class="exampleInputFile">Experience</label>
-                                <input type="number" min="1" max="100" class="form-control" id="experience" name="experience" placeholder="ex:50">
+                                <label for="exampleInputEmail1">Deskripsi</label>
+                                <textarea id="content" name="desc" rows="10" cols="80"></textarea>
                             </div>
+                           
+                            
+                           
+                                           
 
                             
+
                         </div>
 
                         <div class="box-footer">
@@ -48,6 +55,9 @@
                             <button type="submit" class="btn btn-info pull-right">Submit</button>
                         </div>
                         <!-- /.box-body -->
+
+
+
 
 
 
@@ -83,4 +93,30 @@
 <script src="<?php echo base_url(); ?>assets/backend/bower_components/ckeditor/ckeditor.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="<?php echo base_url(); ?>assets/backend/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+
+
+<!-- CK Editor -->
+
+<!-- Bootstrap WYSIHTML5 -->
+
+<script>
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('content')
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+  })
+</script>
+
+
+<script>
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor2')
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+  })
+</script>
 

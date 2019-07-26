@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <li><a href="<?=base_url('data/resume');?>">Resume</a></li>
                     <li><a href="<?=base_url('data/portfolio');?>">Portfolio</a></li>
                     <li><a href="<?=base_url('data/blog');?>">Blog</a></li>
-                    
+                    <li class="lonon-active"><a href="<?=base_url('data/services');?>">Services</a></li>
                    
                     <li><a href="<?=base_url('data/contact');?>">Contact</a></li>
                 </ul>

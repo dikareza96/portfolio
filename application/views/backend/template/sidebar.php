@@ -36,6 +36,10 @@
             <i class="fa fa-table"></i> <span>Blog</span>
 
           </a>
+          <a href="<?php echo base_url("backend/services/index");?>">
+            <i class="fa fa-table"></i> <span>Services</span>
+
+          </a>
            <a href="<?php echo base_url("backend/client/index");?>">
             <i class="fa fa-table"></i> <span>Client</span>
 
