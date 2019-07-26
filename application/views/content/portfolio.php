@@ -16,7 +16,7 @@
 
                         <?php foreach ($portfolio as $p): ?>
                         <div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
-                            <a href="projects-single.html" class="desc">
+                            <a href="<?php echo base_url("data/project_single/$p->id");?>" class="desc">
                                 <div class="project"> <img src="<?=base_url()?>assets/uploads/<?=$p->img;?>" class="img-fluid" alt="">
                                     <div class="desc">
                                         <div class="con">

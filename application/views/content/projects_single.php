@@ -7,24 +7,17 @@
                             <h2 class="lonon-heading animate-box" data-animate-effect="fadeInLeft">Project Single</h2> </div>
                     </div>
 
-                    <?php foreach ($project_single as $key => $value): ?>
+                    <?php foreach ($project as $key): ?>
                         
                     <?php endforeach ?>
                     <div class="row">
-                        <div class="col-md-7 image-content animate-box fadeInLeft animated" data-animate-effect="fadeInLeft"> <img class="img-fluid mb-30" src="<?=base_url()?>assets/uploads/<?=$p->img;?>" alt=""> <!-- <img class="img-fluid mb-30" src="images/portfolio/01.jpg" alt="">  --></div>
+                        <div class="col-md-7 image-content animate-box fadeInLeft animated" data-animate-effect="fadeInLeft"> <img class="img-fluid mb-30" src="<?=base_url()?>assets/uploads/<?=$key->img;?>" alt=""> <!-- <img class="img-fluid mb-30" src="images/portfolio/01.jpg" alt="">  --></div>
                         <div class="col-md-5 sticky-parent animate-box fadeInLeft animated" data-animate-effect="fadeInLeft">
                             <div id="sticky_item">
                                 <div class="project-desc">
-                                    <h2>Drana Facy</h2>
-                                    <p>Yuroin non lorem ac erat suscipit bibendum. Nulla facilisi. Sedeuter nunc volutpat, mollis sapien vel, conseyer turpeutionyer massa in libero semper. Fusce mollis augue sit amet hendrerit vestibulum. Duisteyerionyer venenatis lacus.</p>
-                                    <p>Fusce mollis augue sit amet hendrerit vestibulum. Duisteyerionyer venenatis lacus.</p>
-                                    <p>Yuroin non lorem ac erat suscipit bibendum. Nulla facilisi. Sedeuter nunc volutpat, mollis sapien veli, conseyer turpeutionyer massa in libero semper. </p>
-                                    <p>Yuroin non lorem ac erat suscipit bibendum. Nulla facilisi. Sedeuter nunc volutpat, mollis sapien vel, conseyer turponyer massa in libero semper. Fusce mollis augue sit amet hendrerit vestibulum.</p>
-                                    <p><b>Project Name:</b> Corporate Identity
-                                        <br><b>Client:</b> Eight Inc.
-                                        <br><b>Skills:</b> Photoshop
-                                        <br><b>Category:</b> Brand Design </div>
-                            </div>
+                                    <h2><?php echo $key->title;?></h2>
+                                    <p><?php echo $key->content ;?></p>
+                                   
                         </div>
                     </div>
                 </div>
