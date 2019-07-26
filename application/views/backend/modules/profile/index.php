@@ -31,7 +31,6 @@
                 <thead>
                   <tr>
                       <th class="text-center">NO.</th>
-                      <th class="text-center">Position</th>
                       <th class="text-center">Name</th>
                       <th class="text-center">Profesi</th>
                       <th class="text-center">Image</th>
@@ -45,9 +44,6 @@
                 ?> 
                 <tr>
                   <td class="text-center"><?php echo $no++ ?></td>
-                  
-                  <td class="text-center"><?php echo $row->position ;?></td>
-
                   <td class="text-center"><?php echo $row->name; ?></td>
                   <td class="text-center"><?php echo $row->profesi; ?></td>
                   <td class="text-center"><img style="width: 100px;height: 100px;" src="<?=base_url()?>assets/uploads/<?=$row->img;?>"></td>

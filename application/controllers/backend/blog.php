@@ -88,33 +88,33 @@ class Blog extends CI_Controller {
         $config['max_height']           = 2048;
         $config['file_name'] = $nmfile;
         $this->upload->initialize($config);
-        $content = $this->input->post('content');
+        $id = $this->input->post('id');
+        $title = $this->input->post('title');
+		$desc = $this->input->post('desc');
+
+        $data = array(
+	        			'title' => $title,
+	        			'desc' => $desc,
+
+	        			);
          if($_FILES['image']['name'])
         {
 	        if ($this->upload->do_upload('image'))
 	        {
-	        $title = $this->input->post('title');
-		    $teaser = $this->input->post('teaser');
-		   // $content = $_POST['content'];
-		    $content = $this->input->post('content');
+	        
 		    
 
 	        $gbr = $this->upload->data();
-	        $data = array(
-	        			'title' => $title,
-	        			'teaser' => $teaser,
-	        			'content' => $content,
-	        			'img' => $gbr['file_name']
-
-	        			);
-	         $where = array(
+	        $data['img'] = $gbr['file_name'];
+	        
+	         
+	        } 
+	    }
+	    $where = array(
 			'id' => $id
 			);
 		
-		    $this->Resource->update($where,$data,$this->table);
-	        } 
-	    }
-	   
+		$this->Resource->update($where,$data,$this->table);
 		redirect('backend/'.$module.'/index');
 
 	}

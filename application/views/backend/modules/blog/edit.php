@@ -4,19 +4,19 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Project
+            Blog
             <!-- <small>Preview</small> -->
         </h1>
         <ol class="breadcrumb">
             <li><a href="<?php echo base_url("backend/home/index");?>"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="<?php echo base_url("backend/".$route."/index");?>">All Project</a></li>
-            <li class="active">Create New Project</li>
+            <li><a href="<?php echo base_url("backend/".$route."/index");?>">All Blog</a></li>
+            <li class="active">Create New Blog</li>
         </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
-        <form role="form" method="POST" enctype="multipart/form-data" action="<?php echo base_url("backend/".$route."/store");?>">
+        <form role="form" method="POST" enctype="multipart/form-data" action="<?php echo base_url("backend/".$route."/update");?>">
             
             <div class="row">
                 <!-- left column -->
@@ -29,7 +29,7 @@
                         <!-- /.box-header -->
                         <!-- form start -->
 
-                        <?php foreach ($project as $row) {
+                        <?php foreach ($blog as $row) {
                                         ?>
                         <input id="id" name="id" required="required" type="hidden" value="<?php echo $row->id; ?>"> 
                         <div class="box-body">
@@ -38,13 +38,10 @@
                                 <input type="text" class="form-control" id="title" name="title" value="<?php echo $row->title; ?>">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Teaser</label>
-                                <input type="text" class="form-control" id="teaser" name="teaser" value="<?php echo $row->teaser; ?>" placeholder="small preview from content">
-                            </div>
-                            <div class="form-group">
                                 <label for="exampleInputEmail1">Content</label>
-                                <textarea id="content" name="content" rows="10" cols="80"><?php echo $row->content; ?></textarea>
+                               <textarea id="content" name="desc" rows="10" cols="80"><?php echo $row->desc; ?></textarea>
                             </div>
+                          
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Image</label>
                                 <input type="file" class="form-control" id="image" name="image" >

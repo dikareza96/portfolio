@@ -19,7 +19,10 @@
        
          <li >
 
-          <a href="<?php echo base_url("backend/profile/index");?>"><i class="fa fa-angle-double-right"></i>Profil</a>
+          <a href="<?php echo base_url("backend/profile/index");?>">
+            <i class="fa fa-table"></i> <span>Profile</span>
+
+          </a>
           <a href="<?php echo base_url("backend/experience/index");?>">
             <i class="fa fa-table"></i> <span>Experience</span>
 
@@ -30,7 +33,7 @@
           </a>
 
            <a href="<?php echo base_url("backend/blog/index");?>">
-            <i class="fa fa-table"></i> <span>blog</span>
+            <i class="fa fa-table"></i> <span>Blog</span>
 
           </a>
            <a href="<?php echo base_url("backend/client/index");?>">

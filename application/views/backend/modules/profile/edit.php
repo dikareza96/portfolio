@@ -39,20 +39,17 @@
                                     <?php echo $row->content; ?>
                                 </textarea>
                             </div>
-                            <div class="form-group">
-                                <label class="exampleInputFile">Position</label>
-                                <input type="text" class="form-control" id="company" name="position" placeholder="Enter company name" value="<?php echo $row->position; ?>">
-                            </div>
+                           
 
                             <div class="form-group">
                                 <label class="exampleInputFile">Name</label>
-                                <input type="text" class="form-control" id="position" name="name" placeholder="Enter role name" value="<?php echo $row->position; ?>">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter role name" value="<?php echo $row->name; ?>">
                             </div>
-
+                          <div class="form-group">
                             <label for="exampleInputEmail1">Profesi</label>
-                            <div class="box-body pad">
-                                <textarea class="form-control" rows="3" name="description" id="description"><?php echo $row->profesi; ?></textarea>
-                            </div>
+                            <textarea class="form-control" rows="3" name="profesi" id="profesi"><?php echo $row->profesi; ?></textarea>
+                            
+                        </div>
 
                              <div class="form-group">
                                 <label for="exampleInputEmail1">Image</label>

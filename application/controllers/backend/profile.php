@@ -39,44 +39,41 @@ class Profile extends CI_Controller {
 	{
 		$module = $this->table;
 		$this->load->library('upload');
-        $nmfile = "file_".time(); 
-        $config['upload_path'] = './assets/uploads/'; 
-        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; 
-        $config['max_size']             = 2000;
+		$nmfile = "file_".time(); 
+		$config['upload_path'] = './assets/uploads/'; 
+		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; 
+		$config['max_size']             = 2000;
 		$config['max_width']            = 2048;
-        $config['max_height']           = 2048;
-        $config['file_name'] = $nmfile;
-        $this->upload->initialize($config);
-         if($_FILES['image']['name'])
-        {
-	        if ($this->upload->do_upload('image'))
-	        {
-		    $content = $this->input->post('content');
-		    $position = $this->input->post('position');
-		    $name = $this->input->post('name');
-		    $profesi = $this->input->post('profesi');
-		  
-	        $gbr = $this->upload->data();
-	        $data = array(
-	        			'content' => $content,
-	        			'position' => $position,
-	        			'name' => $name,
-	        			'profesi' => $profesi,
-	        			'img' =>$gbr['file_name']
+		$config['max_height']           = 2048;
+		$config['file_name'] = $nmfile;
+		$this->upload->initialize($config);
+		if($_FILES['image']['name'])
+		{
+			if ($this->upload->do_upload('image'))
+			{
+				$content = $this->input->post('content');
+				$name = $this->input->post('name');
+				$profesi = $this->input->post('profesi');
+				$gbr = $this->upload->data();
+				$data = array(
+					'content' => $content,
+					'profesi' => $profesi,
+					'name' => $name,
+					'img' =>$gbr['file_name']
 
-	        			);
-	        $this->Resource->store($data,$this->table);  
-	        } 
-	    }
+				);
+				$this->Resource->store($data,$this->table);  
+			} 
+		}
 
 		redirect('backend/'.$module.'/index');
 	}
 	function edit($id){ 
 		$module = $this->table;
-        $data['route'] = $this->table;
+		$data['route'] = $this->table;
 		$where = array('id' => $id);
-	    $data[$module] = $this->Resource->edit($where,$this->table)->result();
-	    $this->load->view('backend/template/header');
+		$data[$module] = $this->Resource->edit($where,$this->table)->result();
+		$this->load->view('backend/template/header');
 		$this->load->view('backend/template/sidebar');
 		$this->load->view('backend/modules/'.$module.'/edit',$data);
 		$this->load->view('backend/template/footer');
@@ -85,51 +82,52 @@ class Profile extends CI_Controller {
 		
 		$module = $this->table;
 		$this->load->library('upload');
-        $nmfile = "file_".time(); 
-        $config['upload_path'] = './assets/uploads/'; 
-        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; 
-        $config['max_size']             = 2000;
+		$nmfile = "file_".time(); 
+		$config['upload_path'] = './assets/uploads/'; 
+		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; 
+		$config['max_size']             = 2000;
 		$config['max_width']            = 2048;
-        $config['max_height']           = 2048;
-        $config['file_name'] = $nmfile;
-        $this->upload->initialize($config);
-         if($_FILES['image']['name'])
-        {
-	        if ($this->upload->do_upload('image'))
-	        {
-	        	$id = $this->input->post('id');
-		    $content = $this->input->post('content');
-		    $position = $this->input->post('position');
-		    $name = $this->input->post('name');
-		    $profesi = $this->input->post('profesi');
-		  
-	        $gbr = $this->upload->data();
-	        $data = array(
-	        			'content' => $content,
-	        			'position' => $position,
-	        			'name' => $name,
-	        			'profesi' => $profesi,
-	        			'img' =>$gbr['file_name']
+		$config['max_height']           = 2048;
+		$config['file_name'] = $nmfile;
+		$this->upload->initialize($config);
 
-	        			);
-	        $where = array(
-			'id' => $id
-			);
-	         $this->Resource->update($where,$data,$this->table);
-	        } 
-	    }
+		$id = $this->input->post('id');
+		$content = $this->input->post('content');
+		$name = $this->input->post('name');
+		$profesi = $this->input->post('profesi');
 
-		
+		$data = array(
+					'content' => $content,
+					'name' => $name,
+					'profesi' => $profesi,
+
+				);
+		if($_FILES['image']['name'])
+		{
+			if ($this->upload->do_upload('image'))
+			{
+
+				$gbr = $this->upload->data();
+				$data['img'] = $gbr['file_name'];
+				
+				
+			} 
+		}
+
+		$where = array(
+					'id' => $id
+				);
+				$this->Resource->update($where,$data,$this->table);
 		redirect('backend/'.$module.'/index');
 	}
 	function destroy ($id){ 
 		$module = $this->table;
-        $where = array('id' => $id);
-        $this->Resource->destroy($where,$this->table);
-        
-       
-        redirect('backend/'.$module.'/index'); 
-    }
+		$where = array('id' => $id);
+		$this->Resource->destroy($where,$this->table);
+
+
+		redirect('backend/'.$module.'/index'); 
+	}
 	
 	
 

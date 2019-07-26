@@ -32,54 +32,26 @@
 
 
                         <div class="box-body">
-                           
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Content</label>
+                                <textarea id="content" name="content" rows="10" cols="80"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Profesi</label>
+                                <input type="text" class="form-control" id="profesi" name="profesi" placeholder="small preview from content">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Profile image</label>
+                                <input type="file" class="form-control" id="image" name="image" >
+                            </div>
                                            
 
                             
-
-                             
-                                <div class="box-header">
-                                  <h3 class="box-title">Content
-                                    <!-- <small>Advanced and full of features</small> -->
-                                </h3>
-                                <!-- tools box -->
-                                
-                                <!-- /. tools -->
-                            </div>
-                            <!-- /.box-header -->
-                            <div class="box-body pad">
-                              
-                                <textarea id="editor2" name="content" rows="10" cols="80">
-                                    <!-- This is my textarea to be replaced with CKEditor. -->
-                                </textarea>
-                            
-                        </div>
-                   
-
-
-
-
-                            <div class="form-group">
-                                <label class="exampleInputFile">Position</label>
-                                <input type="text" class="form-control" id="position" name="position" placeholder="Enter role name">
-                            </div>
-
-                            <label for="exampleInputEmail1">Name</label>
-                            <div class="box-body pad">
-                                <textarea class="form-control" rows="3" name="name" id="name"></textarea>
-                            </div>
-
-
-                            <label for="exampleInputEmail1">Profesi</label>
-                            <div class="box-body pad">
-                                <textarea class="form-control" rows="3" name="profesi" id="profesi"></textarea>
-                            </div>
-
-                               <div class="form-group">
-                                <label for="exampleInputEmail1">Image</label>
-                                <input type="file" class="form-control" id="image" name="image" >
-                            </div>
-                          
 
                         </div>
 
@@ -136,7 +108,7 @@
   $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
-    CKEDITOR.replace('editor1')
+    CKEDITOR.replace('content')
     //bootstrap WYSIHTML5 - text editor
     $('.textarea').wysihtml5()
   })
