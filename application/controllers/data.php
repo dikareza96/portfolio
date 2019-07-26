@@ -48,10 +48,13 @@ class Data extends CI_Controller {
 
 	}
 
-	public function post()
+	public function post($id)
 	{
-		$this->load->view('f_sidebar');
-		$this->load->view('content/post');
+		$where = array('id' => $id);
+		$data['blog'] = $this->Resource->edit($where,'blog')->result();
+		$data['profile'] = $this->Resource->show('profile')->result();
+		$this->load->view('f_sidebar',$data);
+		$this->load->view('content/post',$data);
 		$this->load->view('f_footer');
 
 	}

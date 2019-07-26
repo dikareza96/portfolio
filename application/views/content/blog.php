@@ -12,9 +12,9 @@
                          <?php foreach ($blog as $b): ?>
                         <div class="col-md-6 col-sm-6">
                             <div class="blog-entry animate-box" data-animate-effect="fadeInLeft">
-                                <a href="post.html" class="blog-img"><img src="<?=base_url()?>assets/uploads/<?=$b->img;?>" class="img-fluid" alt=""></a>
+                                <a href="<?php echo base_url("data/post/$b->id");?>" class="blog-img"><img src="<?=base_url()?>assets/uploads/<?=$b->img;?>" class="img-fluid" alt=""></a>
                                 <div class="desc"> <span>Sep 27, 2019 | Brand Identity</span>
-                                    <h3><a href="post.html"><?php echo $b->title; ?></a></h3>
+                                    <h3><a href="<?php echo base_url("data/post/$b->id");?>"><?php echo $b->title; ?></a></h3>
                                     <p><?php echo $b->desc; ?></p>
                                 </div>
                             </div>
