@@ -29,30 +29,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <!-- Sidebar Section -->
         <aside id="lonon-aside">
             <!-- Logo -->
+            <?php foreach ($profile as $p): ?>
+                
+            
+
             <h1 id="lonon-logo">
-                <img src="images/profile.jpg" alt=""><br />
-                <a href="index.html">Lonon F. Smith<span>Web Designer</span></a>
+                <img src="<?=base_url()?>assets/uploads/<?=$p->img;?>" alt=""><br />
+                <a href=""><?php echo $p->name; ?><span><?php echo $p->profesi; ?></span></a>
             </h1>
+
+            <?php endforeach ?>
             <!-- Menu -->
             <nav id="lonon-main-menu">
                 <ul>
                     <li class="lonon-active"><a href="<?=base_url('data/index');?>">Home</a></li>
                     <li><a href="<?=base_url('data/resume');?>">Resume</a></li>
                     <li><a href="<?=base_url('data/portfolio');?>">Portfolio</a></li>
-                    <li><a href="<?=base_url('data/services');?>">Services</a></li>
                     <li><a href="<?=base_url('data/blog');?>">Blog</a></li>
+                    <li class="lonon-active"><a href="<?=base_url('data/services');?>">Services</a></li>
+                   
                     <li><a href="<?=base_url('data/contact');?>">Contact</a></li>
                 </ul>
             </nav>
             <!-- Sidebar Footer -->
             <div class="lonon-footer">
-                <ul>
+                <!-- <ul>
                     <li><a href="#"><i class="ti-facebook font-14px gray-icon"></i></a></li>
                     <li><a href="#"><i class="ti-twitter-alt font-14px gray-icon"></i></a></li>
                     <li><a href="#"><i class="ti-instagram font-14px gray-icon"></i></a></li>
                     <li><a href="#"><i class="ti-dribbble font-14px gray-icon"></i></a></li>
-                </ul>
+                </ul> -->
                 <p><small>&copy; 2019 Lonon. by <a href="#">DuruThemes</a></small></p>
             </div>
         </aside>
-        
+       
+

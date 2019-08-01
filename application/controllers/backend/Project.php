@@ -10,7 +10,10 @@ class Project extends CI_Controller {
 		parent::__construct();
 		$this->load->helper(array('form', 'url','file', 'text'));
 		$this->load->model('Resource');
-		
+		if($this->session->userdata('level') <> 'admin')
+		{
+			redirect('backend/login');
+		}
 
 	}
 
@@ -82,6 +85,15 @@ class Project extends CI_Controller {
 		$module = $this->table;
 		
 		$this->load->library('upload');
+		$id = $this->input->post('id');
+        $title = $this->input->post('title');
+		 $teaser = $this->input->post('teaser');
+		    $content = $this->input->post('content');
+		     $data = array(
+	        			'title' => $title,
+	        			'teaser' => $teaser,
+	        			'content' => $content,
+	        			);
         $nmfile = "file_".time(); 
         $config['upload_path'] = './assets/uploads/'; 
         $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; 
@@ -95,28 +107,18 @@ class Project extends CI_Controller {
         {
 	        if ($this->upload->do_upload('image'))
 	        {
-	        $title = $this->input->post('title');
-		    $teaser = $this->input->post('teaser');
-		   // $content = $_POST['content'];
-		    $content = $this->input->post('content');
-		    
 
 	        $gbr = $this->upload->data();
-	        $data = array(
-	        			'title' => $title,
-	        			'teaser' => $teaser,
-	        			'content' => $content,
-	        			'img' => $gbr['file_name']
-
-	        			);
-	         $where = array(
-			'id' => $id
-			);
-		
-		    $this->Resource->update($where,$data,$this->table);
+	        $data['img'] =$gbr['file_name'];
+	        
 	        } 
+
 	    }
-	   
+	    $where = array(
+			'id' => $id
+		);
+		
+		$this->Resource->update($where,$data,$this->table);
 		redirect('backend/'.$module.'/index');
 
 	}

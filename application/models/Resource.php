@@ -25,6 +25,11 @@ class Resource extends CI_Model{
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
+	function cek($username, $password) {
+    $this->db->where("username", $username);
+    $this->db->where("password", $password);
+    return $this->db->get("user");
+    }
 	
 
 }

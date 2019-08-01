@@ -37,7 +37,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="exampleInputFile">Experience</label>
-                                <input type="number" min="1" max="100" class="form-control" id="experience" name="experience" placeholder="ex:50" company nameex:50"">
+                                <input type="number" min="1" max="100" class="form-control" id="experience" name="experience" placeholder="ex:50">
                             </div>
 
                             

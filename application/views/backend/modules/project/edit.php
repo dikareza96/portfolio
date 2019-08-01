@@ -16,7 +16,7 @@
 
     <!-- Main content -->
     <section class="content">
-        <form role="form" method="POST" enctype="multipart/form-data" action="<?php echo base_url("backend/".$route."/store");?>">
+        <form role="form" method="POST" enctype="multipart/form-data" action="<?php echo base_url("backend/".$route."/update");?>">
             
             <div class="row">
                 <!-- left column -->
